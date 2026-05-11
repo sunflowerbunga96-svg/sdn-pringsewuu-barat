@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD Negeri 1 Pringsewu Barat - Sekolah Unggul Berprestasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+            background: #f5f9ff;
+            color: #1a3a4f;
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar custom */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e7f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e6f5c;
+            border-radius: 10px;
+        }
+
+        /* Header atas */
+        .top-bar {
+            background: #0a2f44;
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0a4b7a, #1e6f5c);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Navbar Sticky */
+        nav {
+            background: #023047;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 16px 28px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            background: #ffb703;
+            color: #023047;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        /* Hero Section dengan gambar asli kamu */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('sdddd.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            border-radius: 24px;
+            padding: 100px 30px;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            background: rgba(0,0,0,0.65);
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 60px;
+            backdrop-filter: blur(5px);
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin: 50px 0 30px;
+            color: #0a4b7a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ffb703;
+            border-radius: 5px;
+        }
+
+        /* Grid & Card */
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 30px 25px;
+            width: 300px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+        }
+
+        .card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #1e6f5c;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Statistik */
+        .stats {
+            background: linear-gradient(120deg, #0a4b7a, #1e6f5c);
+            border-radius: 30px;
+            padding: 50px 20px;
+            margin: 50px 0;
+            color: white;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Tabel Jadwal */
+        .schedule-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin: 30px 0;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th {
+            background: #1e6f5c;
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e7f0;
+        }
+
+        .schedule-table tr:hover {
+            background: #f0f7ff;
+        }
+
+        /* Prestasi Badge */
+        .prestasi-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #ffb703, #ff9f00);
+            color: #1a3a4f;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Kontak */
+        .contact-info {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-details p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .map-placeholder {
+            background: #e0e7f0;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            min-width: 250px;
+        }
+
+        /* Footer */
+        footer {
+            background: #023047;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .hero h2 { font-size: 1.5rem; padding: 12px 20px; }
+            nav a { padding: 12px 16px; font-size: 13px; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    🏆 Terakreditasi A | Sekolah Adiwiyata Tingkat Provinsi | Ramah Anak
+</div>
+
+<div class="header">
+    <h1>🏫 SD NEGERI 1 PRINGSEWU BARAT</h1>
+    <p>Beriman | Berprestasi | Berwawasan Lingkungan | Berkarakter Pancasila</p>
+</div>
+
+<nav>
+    <a href="#home">🏠 Beranda</a>
+    <a href="#profil">📖 Profil</a>
+    <a href="#visimisi">🎯 Visi & Misi</a>
+    <a href="#fasilitas">🏆 Fasilitas</a>
+    <a href="#prestasi">⭐ Prestasi</a>
+    <a href="#jadwal">📅 Jadwal</a>
+    <a href="#kontak">📞 Kontak</a>
+</nav>
+
+<div class="container" id="home">
+    <!-- Hero dengan gambar sdddd.jpg -->
+    <div class="hero">
+        <h2>📚 Selamat Datang di Sekolah Kebanggaan Pringsewu Barat</h2>
+        <p>Membangun Generasi Emas yang Cerdas, Berakhlak, dan Berdaya Saing Global</p>
+    </div>
+
+    <!-- Profil -->
+    <div id="profil">
+        <h2 class="section-title">🏛️ Profil Sekolah</h2>
+        <div style="background: white; border-radius: 24px; padding: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                <strong>SD Negeri 1 Pringsewu Barat</strong> berdiri sejak tahun 1985 dan telah menjadi lembaga pendidikan 
+                unggulan di Kabupaten Pringsewu, Lampung. Berlokasi strategis di <strong>Jl. Pendidikan No. 10, Pringsewu Barat</strong>, 
+                kami mengedepankan pembelajaran berbasis teknologi, karakter, dan lingkungan hidup. Dengan tenaga pendidik profesional 
+                serta kurikulum merdeka, kami mencetak siswa yang siap menghadapi masa depan.
+            </p>
+            <div class="stats">
+                <div class="stats-grid">
+                    <div class="stat-item"><h3>35+</h3><p>Guru Profesional</p></div>
+                    <div class="stat-item"><h3>520+</h3><p>Siswa Aktif</p></div>
+                    <div class="stat-item"><h3>18+</h3><p>Juara Lomba</p></div>
+                    <div class="stat-item"><h3>6+</h3><p>Ekskul Unggulan</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visi & Misi -->
+    <div id="visimisi">
+        <h2 class="section-title">✨ Visi & Misi</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🌟</div>
+                <h3>Visi</h3>
+                <p>Terwujudnya siswa yang beriman, bertakwa, unggul dalam prestasi, terampil, dan berbudaya lingkungan menuju generasi emas 2045.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📌</div>
+                <h3>Misi</h3>
+                <p>✅ Meningkatkan mutu pembelajaran berbasis digital<br>
+                ✅ Menanamkan karakter Pancasila & budi pekerti<br>
+                ✅ Mengembangkan bakat minat melalui 10+ ekstrakurikuler<br>
+                ✅ Menciptakan sekolah hijau & sehat</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fasilitas -->
+    <div id="fasilitas">
+        <h2 class="section-title">🏛️ Fasilitas Modern</h2>
+        <div class="grid">
+            <div class="card"><div class="icon">💻</div>Lab. Komputer & Multimedia</div>
+            <div class="card"><div class="icon">📚</div>Perpustakaan Digital</div>
+            <div class="card"><div class="icon">⚽</div>Lapangan Futsal & Basket</div>
+            <div class="card"><div class="icon">🎨</div>Studio Seni & Musik</div>
+            <div class="card"><div class="icon">🕌</div>Mushola Ber-AC</div>
+            <div class="card"><div class="icon">🍎</div>Kantin Sehat Bergizi</div>
+        </div>
+    </div>
+
+    <!-- Prestasi -->
+    <div id="prestasi">
+        <h2 class="section-title">🏅 Prestasi Terbaru</h2>
+        <div class="prestasi-list">
+            <span class="badge">🥇 Juara 1 OSN Matematika Kabupaten</span>
+            <span class="badge">🥈 Juara 2 Lomba Pidato Bahasa Inggris</span>
+            <span class="badge">🥇 Juara Umum FLS2N Kecamatan</span>
+            <span class="badge">🏆 Sekolah Adiwiyata Provinsi 2024</span>
+            <span class="badge">🥉 Juara 3 Cerdas Cermat Sejarah</span>
+        </div>
+    </div>
+
+    <!-- Jadwal Pelajaran -->
+    <div id="jadwal">
+        <h2 class="section-title">📖 Jadwal Pelajaran (Kelas Unggulan)</h2>
+        <div class="schedule-wrapper">
+            <table class="schedule-table">
+                <thead>
+                    <tr><th>Hari</th><th>07.30 - 09.00</th><th>09.30 - 11.00</th><th>13.00 - 14.30</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Senin</td><td>Matematika</td><td>Bahasa Indonesia</td><td>IPA & Praktik</td></tr>
+                    <tr><td>Selasa</td><td>IPS</td><td>Pend. Agama</td><td>Seni Budaya</td></tr>
+                    <tr><td>Rabu</td><td>Bahasa Inggris</td><td>Olahraga</td><td>PPKn</td></tr>
+                    <tr><td>Kamis</td><td>Matematika</td><td>SBdP</td><td>Literasi Digital</td></tr>
+                    <tr><td>Jumat</td><td>PJOK</td><td>Pramuka/Imtaq</td><td>Bimbingan Karir</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Kontak -->
+    <div id="kontak">
+        <h2 class="section-title">📞 Hubungi Kami</h2>
+        <div class="contact-info">
+            <div class="contact-details">
+                <p>📍 <strong>Alamat:</strong> Jl. Pendidikan No. 10, Pringsewu Barat, Lampung</p>
+                <p>📧 <strong>Email:</strong> sdn1pringsewubarat@dikpora.go.id</p>
+                <p>📱 <strong>Telepon:</strong> (0729) 5566-7890</p>
+                <p>🕒 <strong>Jam Kantor:</strong> Senin-Jumat, 07.00 - 16.00</p>
+                <p>🌐 <strong>PPDB Online:</strong> ppdb.sdn1pringsewubarat.sch.id</p>
+            </div>
+            <div class="map-placeholder">
+                🗺️ <strong>Google Maps</strong><br>
+                Jl. Pendidikan No. 10<br>
+                Pringsewu Barat, Lampung
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 SD Negeri 1 Pringsewu Barat | All Rights Reserved</p>
+    <p style="margin-top: 10px; font-size: 14px;">Terakreditasi A | NPSN: 10800645 | Menginspirasi Generasi Berprestasi</p>
+</footer>
+
+</body>
+</html>
